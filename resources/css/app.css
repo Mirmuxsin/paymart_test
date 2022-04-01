@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html, body {
+        @apply font-display text-dark;
+    }
+}
+
+@layer components {
+    .header {
+        @apply bg-white py-2 sticky top-0 left-0 w-full;
+    }
+
+    @supports (backdrop-filter: blur(12px)) {
+        .header {
+            @apply bg-white-600 backdrop-filter backdrop-blur-md;
+        }
+    }
+
+    .header-logo {
+        @apply text-3xl font-bold;
+    }
+
+    .header-links {
+        @apply text-lg font-normal;
+    }
+
+    .nav-link {
+        @apply pb-2 font-thin border-b-4 border-b-transparent transition-all text-dark-600 duration-300 hover:border-b-blue hover:text-dark;
+    }
+    .nav-link.active {
+        @apply border-b-blue text-dark;
+    }
+
+    .blog-posts {
+        @apply grid container;
+        grid-template-columns: repeat(3, 33%);
+        gap: 16px;
+    }
+
+    .blog-card {
+        @apply rounded overflow-hidden shadow-sm;
+    }
+
+    .card-head {
+        min-height: 300px;
+        max-height: 300px;
+        height: 300px;
+    }
+    .card-head-big {
+        min-height: 400px;
+        max-height: 400px;
+        height: 400px;
+    }
+
+    .card-img {
+        @apply h-full w-full object-cover;
+    }
+
+    .card-body {
+        @apply p-4 border border-white-border border-t-transparent bg-white-full;
+    }
+
+    .card-body h2 {
+        @apply text-2xl font-semibold text-gray transition-all duration-300 hover:text-dark;
+    }
+
+    .card-body p {
+        @apply text-sm mt-2 text-gray text-ellipsis whitespace-nowrap;
+    }
+
+    .card-footer {
+        @apply text-dark-lighter flex items-center justify-between mt-4;
+    }
+
+    .card-views {
+        @apply flex items-center space-x-2;
+    }
+    .card-views p {
+        @apply text-lg m-0 p-0;
+    }
+
+    .footer {
+        @apply flex items-start container py-8;
+    }
+
+    .blogs-catalog {
+        @apply flex items-start container py-4;
+    }
+
+    .popular-tags {
+        @apply w-2/5 flex flex-wrap;
+        gap: 8px;
+    }
+
+    .blogs-list {
+        @apply w-3/5 flex flex-col;
+        gap: 16px 0;
+    }
+
+    .tag-block {
+        @apply inline py-1 px-2 rounded-full bg-gray text-white transition-all duration-300 hover:bg-dark text-center;
+        min-width: 52px;
+    }
+
+    .blog-single {
+        @apply py-4 container flex justify-center;
+    }
+    .blog-container {
+        @apply w-10/12;
+    }
+
+    .blog-details {
+        @apply flex space-x-4 py-4;
+    }
+
+    .blog-views {
+        @apply flex items-center space-x-2 text-gray;
+    }
+    .blog-views p {
+        @apply text-lg;
+    }
+
+    .blog-tags {
+        @apply pb-2 flex items-center;
+        gap: 6px;
+    }
+
+    .blog-content {
+        @apply text-gray py-4 text-sm;
+    }
+
+    .blog-split {
+        @apply bg-dark-600 h-px border-none my-4;
+    }
+
+    .input {
+        @apply w-full p-2 placeholder:text-dark-600 text-dark border border-gray rounded;
+    }
+
+    .btn-comment {
+        @apply p-2 rounded bg-gray text-white-full transition-all duration-300 hover:bg-dark;
+    }
+
+    .comments-list {
+        @apply mb-4;
+    }
+
+    .not-comments {
+        @apply w-full flex items-center justify-center text-xl;
+        min-height: 75px;
+        max-height: 75px;
+        height: 75px;
+    }
+
+    .comment-block {
+        @apply mx-4 pt-4;
+    }
+    .comment-block h5 {
+        @apply text-2xl font-semibold;
+    }
+    .comment-block p {
+        @apply text-lg font-thin w-10/12;
+    }
+}
+
+.pagination [aria-current="page"] > span {
+    @apply bg-blue text-white-full border-dark;
+}
+
+.pagination [aria-disabled="true"] > span {
+    @apply text-dark-600;
+}
+
+.pagination-links > :not(span):first-child,
+.pagination-links > span:first-child > span {
+    @apply border-r-0;
+}
+
+.pagination-links > a,
+.pagination-links > span > a {
+    @apply border-dark;
+}
+
+[class$="_error"] {
+    @apply text-red block;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+button.disabled {
+    @apply pointer-events-none opacity-75;
+}
+
+.input.error {
+    @apply border-red outline-0;
+}
