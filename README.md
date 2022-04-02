@@ -6,6 +6,10 @@
 
 `php artisan key:generate`
 
+`php artisan migrate`
+
+`php artisan db:seed`
+
 `php artisan serve`
 
 (на 2 терминале) `php artisan queue:work`
